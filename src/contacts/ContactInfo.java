@@ -14,7 +14,7 @@
 
 
 package contacts;
-
+// test branching
 public abstract class ContactInfo{
 
     protected String info;
