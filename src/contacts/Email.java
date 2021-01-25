@@ -2,30 +2,29 @@ package contacts;
 
 public class Email extends ContactInfo implements TextMessageEnabled{
 
-    // 1) Class Members
-    String email;
+    // 1) Instance Variables
+    protected String email;
 
     // 2) Class Constructor
     public Email(String email){
         this.email = email;
     };
 
-    // 3) Implementing Abstract Methods
+    // 3) Instance Methods
+
+    // 3.1) Implementing Abstract Methods
     public String contactInfo() {
         return this.email;
     }
-
     public String contactInfoType() {
         return "e-mail";
     }
-
     public void sendMessage(String msg) {
-        System.out.println(msg);
+        this.sendTextMessage(msg);
     }
 
-    // 4) Implementing Interface Methods
+    // 3.2) Implementing Interface Methods
     public void sendTextMessage(String msg) {
-        System.out.println("Message from " + this.email + ": ");
-        this.sendMessage(msg);
+        System.out.println("Message from " + this.email + ": " + msg);
     }
 }

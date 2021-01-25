@@ -8,13 +8,18 @@ public class MobilePhone extends Phone implements TextMessageEnabled, AudioMessa
     };
 
 
-    public void sendAudioMessage(Audio msg) {
+    // 3) Instance Methods
 
+    // 3.1) Overriding Parent Methods
+    @Override
+    public void sendMessage(String msg) {
+        this.sendTextMessage(msg);
     }
-
-
+    // 3.2) Implementing Interface Methods
     public void sendTextMessage(String msg) {
-        System.out.println("Message from " + this.email + ": ");
-        this.sendMessage(msg);
+        System.out.println("Message from " + this.phone + ": " + msg);
+    }
+    public void sendAudioMessage(Audio msg) {
+        System.out.println("Message from " + this.phone + ": " + msg.toString());
     }
 }

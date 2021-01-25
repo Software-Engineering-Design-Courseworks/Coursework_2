@@ -2,7 +2,7 @@ package contacts;
 
 public class Phone extends ContactInfo implements AudioMessageEnabled{
 
-    // 1) Class Members
+    // 1) Instance Variables
     protected String phone;
 
     // 2) Class Constructor
@@ -10,7 +10,9 @@ public class Phone extends ContactInfo implements AudioMessageEnabled{
         this.phone = phone;
     };
 
-    // 3) Implementing Abstract Methods
+    // 3) Instance Methods
+
+    // 3.1) Implementing Abstract Methods
     public String contactInfo() {
         return this.phone;
     }
@@ -20,12 +22,11 @@ public class Phone extends ContactInfo implements AudioMessageEnabled{
     }
 
     public void sendMessage(String msg) {
-        System.out.println(msg);
+        this.sendAudioMessage(new Audio(msg));
     }
 
-    // 4) Implementing Interface Methods
+    // 3.2) Implementing Interface Methods
     public void sendAudioMessage(Audio msg) {
-        System.out.println("Message from " + this.phone + ": ");
-        this.sendMessage(msg.toString());
+        System.out.println("Message from " + this.phone + ": " + msg.toString());
     }
 }

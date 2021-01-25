@@ -17,9 +17,6 @@ package contacts;
 
 public abstract class ContactInfo{
 
-    protected String info;
-    protected String type;
-
     abstract String contactInfo();
     abstract String contactInfoType();
     abstract void sendMessage(String msg);

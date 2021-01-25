@@ -1,25 +1,16 @@
 package contacts;
 
-public class Contact extends ContactInfo {
+public class Contact{
 
-    // Attributes
-    private Person person;
+    // 1) Instance Variables
+    protected Person person;
+    protected ContactInfo contactInfo;
 
-    // Constructor
-    public Contact(Person person) {
+    // 2) Class Constructor
+    public Contact(Person person, ContactInfo contactInfo) {
         this.person = person;
+        this.contactInfo = contactInfo;
     }
 
-    public String contactInfo() {
-        return info;
-    }
-
-    public String contactInfoType() {
-        return type;
-    }
-
-    public void sendMessage(String msg) {
-        System.out.println(msg);
-    }
 }
 
